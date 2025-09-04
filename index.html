@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UI/UX Portfolio - 3D Animation</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      overflow: hidden;
+      flex-direction: column;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+      font-weight: 700;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    }
+
+    /* Container for 3D cube */
+    .scene {
+      width: 200px;
+      height: 200px;
+      perspective: 800px;
+    }
+
+    /* The cube */
+    .cube {
+      width: 150px;
+      height: 150px;
+      position: relative;
+      margin: auto;
+      transform-style: preserve-3d;
+      animation: rotateCube 10s linear infinite;
+      cursor: grab;
+    }
+
+    /* Each face of the cube */
+    .cube__face {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border: 2px solid #fff;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 600;
+      font-size: 1.2rem;
+      text-align: center;
+      padding: 10px;
+      backdrop-filter: blur(5px);
+    }
+
+    /* Position faces */
+    .cube__face--front  { transform: translateZ(75px); }
+    .cube__face--back   { transform: rotateY(180deg) translateZ(75px); }
+    .cube__face--right  { transform: rotateY(90deg) translateZ(75px); }
+    .cube__face--left   { transform: rotateY(-90deg) translateZ(75px); }
+    .cube__face--top    { transform: rotateX(90deg) translateZ(75px); }
+    .cube__face--bottom { transform: rotateX(-90deg) translateZ(75px); }
+
+    /* Animation keyframes */
+    @keyframes rotateCube {
+      from {
+        transform: rotateX(0deg) rotateY(0deg);
+      }
+      to {
+        transform: rotateX(360deg) rotateY(360deg);
+      }
+    }
+
+    /* Responsive text below */
+    .intro-text {
+      margin-top: 50px;
+      max-width: 400px;
+      text-align: center;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: #ddd;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Hi, I'm [Akshay jadhav]</h1>
+
+  <div class="scene">
+    <div class="cube">
+      <div class="cube__face cube__face--front">UI Design</div>
+      <div class="cube__face cube__face--back">UX Research</div>
+      <div class="cube__face cube__face--right">Prototyping</div>
+      <div class="cube__face cube__face--left">Wireframing</div>
+      <div class="cube__face cube__face--top">User Testing</div>
+      <div class="cube__face cube__face--bottom">Visual Design</div>
+    </div>
+  </div>
+
+  <p class="intro-text">
+    I craft seamless digital experiences blending creativity and user insights. Explore my portfolio to see UI/UX design projects that put users first.
+  </p>
+
+</body>
+</html>
